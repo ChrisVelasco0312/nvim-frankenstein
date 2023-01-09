@@ -8,15 +8,15 @@ end
 
 
 require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'
 
-	-- THEME
-	use 'navarasu/onedark.nvim'
+  -- THEME
+  use 'navarasu/onedark.nvim'
 
-	-- STATUS LINE
-	use 'nvim-lualine/lualine.nvim'
+  -- STATUS LINE
+  use 'nvim-lualine/lualine.nvim'
 
-	--Lspconfig
+  --Lspconfig
 
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -33,51 +33,63 @@ require('packer').startup(function(use)
     },
   }
 
-	-- auto-completion
-	use 'onsails/lspkind-nvim' --VSCode-like Pictograms
+  -- auto-completion
+  use 'onsails/lspkind-nvim' --VSCode-like Pictograms
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrshth/cmp-buffer' },
+    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-buffer' },
   }
 
-	--LSP UI
-	use 'glepnir/lspsaga.nvim'
-  	-- highlight
-	use 'nvim-treesitter/nvim-treesitter'
-	
-	-- Autotag and Autopair
-	use 'windwp/nvim-ts-autotag'
-	use 'windwp/nvim-autopairs'
+  --LSP UI
+  use 'glepnir/lspsaga.nvim'
+  -- highlight
+  use 'nvim-treesitter/nvim-treesitter'
 
-	-- Fuzz finder
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	use 'nvim-telescope/telescope-file-browser.nvim'
-	use 'kyazdani42/nvim-web-devicons'
-   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+  -- Autotag and Autopair
+  use 'windwp/nvim-ts-autotag'
+  use 'windwp/nvim-autopairs'
+
+  -- Fuzz finder
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+  use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'kyazdani42/nvim-web-devicons'
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
-	-- Tabs: Bufferline
-	-- using packer.nvim
-	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  -- Tabs: Bufferline
+  -- using packer.nvim
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
-	--Formatter: prettier and null-ls
-	use 'jose-elias-alvarez/null-ls.nvim'
-	use 'MunifTanjim/prettier.nvim'
+  --Formatter: prettier and null-ls
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/prettier.nvim'
 
-	--git
-	use 'lewis6991/gitsigns.nvim'
-	use 'dinhhuy258/git.nvim'
+  --git
+  use 'lewis6991/gitsigns.nvim'
+  use 'dinhhuy258/git.nvim'
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   --Comments
   use 'numToStr/Comment.nvim'
   use 'tpope/vim'
+
+  --Dashboard
+  use 'mhinz/vim-startify'
+
+  --TREE EXPLORER
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
