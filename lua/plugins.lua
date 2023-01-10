@@ -82,14 +82,8 @@ require('packer').startup(function(use)
   --Dashboard
   use 'mhinz/vim-startify'
 
-  --TREE EXPLORER
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  --COPILOT
+  use 'github/copilot.vim'
 
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
