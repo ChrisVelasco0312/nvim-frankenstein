@@ -2,6 +2,7 @@ local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
@@ -78,7 +79,7 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
-vim.keymap.set("n", ";l", ":e .<ENTER>", {silent = true})
+vim.keymap.set("n", ";l", ":e .<ENTER>", { silent = true })
 
 --Kickstart maps
 pcall(require('telescope').load_extension, 'fzf')
@@ -87,7 +88,7 @@ vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc =
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+  builtin.current_buffer_fuzzy_find(themes.get_dropdown {
     winblend = 10,
     previewer = false,
   })
@@ -104,5 +105,3 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', ';e', vim.diagnostic.open_float)
 vim.keymap.set('n', ';q', vim.diagnostic.setloclist)
-
-
