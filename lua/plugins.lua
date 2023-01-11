@@ -38,7 +38,12 @@ require('packer').startup(function(use)
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-buffer' },
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-buffer'
+    },
   }
 
   --LSP UI
@@ -59,11 +64,19 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'kyazdani42/nvim-web-devicons'
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
+    cond = vim.fn.executable 'make' == 1
+  }
 
   -- Tabs: Bufferline
   -- using packer.nvim
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v3.*",
+    requires = 'nvim-tree/nvim-web-devicons'
+  }
 
   --Formatter: prettier and null-ls
   use 'jose-elias-alvarez/null-ls.nvim'
@@ -84,6 +97,9 @@ require('packer').startup(function(use)
 
   --COPILOT
   use 'github/copilot.vim'
+
+  --avoid neck pain
+  use { 'shortcuts/no-neck-pain.nvim', tag = '*' }
 
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
