@@ -101,6 +101,10 @@ require('packer').startup(function(use)
   --avoid neck pain
   use { 'shortcuts/no-neck-pain.nvim', tag = '*' }
 
+  -- conjure
+  use 'Olical/conjure'
+  use 'wlangstroth/vim-racket'
+
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
     plugins(use)
