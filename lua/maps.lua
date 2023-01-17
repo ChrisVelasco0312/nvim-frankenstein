@@ -16,7 +16,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 --save
 vim.keymap.set('n', '<Space>w', ':w!<Enter>', { silent = true })
 --close
-vim.keymap.set('n', '<Space>q', ':wq!<Enter>', { silent = true })
+vim.keymap.set('n', '<Space>q', ':q!<Enter>', { silent = true })
+vim.keymap.set('n', '<Space>x', ':wq!<Enter>', { silent = true })
 --source
 vim.keymap.set('n', '<Space>so', ':so<Enter>', { silent = true })
 
