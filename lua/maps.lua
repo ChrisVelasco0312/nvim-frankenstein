@@ -63,10 +63,14 @@ vim.keymap.set('n', '<Leader>ts', '<cmd>silent !tmux neww tmux-sessionizer<CR>',
   { silent = true, desc = 'tmux sessionizer' })
 
 -- quick fixlist navigation
-vim.keymap.set('n', '<Leader>qf', '<cmd>copen<CR>', { silent = true, desc = 'open quickfix' })
-vim.keymap.set('n', '<Leader>qj', '<cmd>cnext<CR>', { silent = true, desc = 'next quickfix' })
-vim.keymap.set('n', '<Leader>qk', '<cmd>cprev<CR>', { silent = true, desc = 'prev quickfix' })
-vim.keymap.set('n', '<Leader>ql', '<cmd>cclose<CR>', { silent = true, desc = 'close quickfix' })
+vim.keymap.set('n', '<Leader>qf', '<cmd>copen<CR>',
+  { silent = true, desc = 'open quickfix' })
+vim.keymap.set('n', '<Leader>qj', '<cmd>cnext<CR>',
+  { silent = true, desc = 'next quickfix' })
+vim.keymap.set('n', '<Leader>qk', '<cmd>cprev<CR>',
+  { silent = true, desc = 'prev quickfix' })
+vim.keymap.set('n', '<Leader>ql', '<cmd>cclose<CR>',
+  { silent = true, desc = 'close quickfix' })
 
 -- replace all occurences of word under cursor
 vim.keymap.set("n", "<leader>z", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
