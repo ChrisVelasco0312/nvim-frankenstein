@@ -73,7 +73,6 @@ local servers = {
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
   },
-
   sumneko_lua = {
     Lua = {
       workspace = { checkThirdParty = false },
