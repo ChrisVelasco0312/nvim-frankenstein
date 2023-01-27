@@ -78,3 +78,9 @@ vim.keymap.set("n", "<leader>z", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- Make bash script executable
 vim.keymap.set('n', '<Leader>me', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'make script executable' })
+
+--if crtl + z is pressed dont do anything
+vim.keymap.set('n', '<C-z>', '<Nop>', { silent = true, desc = 'dont do anything' })
+
+-- <Leader>k to save every buffer and quit
+vim.keymap.set('n', '<Leader>k', '<cmd>wa<CR>:qa<CR>', { silent = true, desc = 'save and quit' })

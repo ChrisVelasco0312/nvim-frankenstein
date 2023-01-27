@@ -138,4 +138,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
+-- set color of side lines to white
+vim.cmd [[
+  hi VertSplit guifg=#ffffff
+]]
+
 require('Comment').setup()

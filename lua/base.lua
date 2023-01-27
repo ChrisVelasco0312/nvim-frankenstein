@@ -85,3 +85,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- set relative numbers only in normal and visual mode
+vim.cmd [[
+  augroup relative_numbers
+    autocmd!
+    autocmd InsertLeave,WinEnter * set relativenumber
+    autocmd InsertEnter,WinLeave * set norelativenumber
+  augroup END
+]]
+
+
+-- auto source this file when nvim opens
+vim.cmd [[
+  augroup auto_source
+    autocmd!
+    autocmd BufWritePost ~/.config/nvim/ source %
+  augroup END
+]]
