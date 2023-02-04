@@ -16,7 +16,7 @@ telescope.setup {
         ["q"] = actions.close
       },
     },
-    file_ignore_patterns = { "/node_modules" },
+    file_ignore_patterns = { "/node_modules", "node_modules" },
   },
   extensions = {
     file_browser = {
@@ -76,7 +76,7 @@ vim.keymap.set("n", "sf", function()
     grouped = true,
     previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 40 }
+    layout_config = { height = 40 },
   })
 end)
 vim.keymap.set("n", ";l", ":e .<ENTER>", { silent = true, desc = '[l] look files' })
@@ -96,7 +96,13 @@ vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find exist
 -- end, { desc = '[/] Fuzzily search in current buffer]' })
 --
 
-vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sf',
+  function()
+    builtin.find_files({
+      no_ignore = false,
+      hidden = true
+    })
+  end, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })

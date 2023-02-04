@@ -8,7 +8,7 @@ if (not status) then return end
 --
 
 local sources = {
-  builtins.diagnostics.eslint_d.with({
+  builtins.diagnostics.eslint.with({
     diagnostics_format = '[eslint] #{m}\n(#{c})'
   }),
   builtins.diagnostics.fish,

@@ -33,6 +33,8 @@ require('packer').startup(function(use)
     },
   }
 
+  use { 'mattn/efm-langserver', run = 'make' }
+
   -- auto-completion
   use 'onsails/lspkind-nvim' --VSCode-like Pictograms
 
