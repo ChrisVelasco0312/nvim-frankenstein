@@ -19,33 +19,31 @@ require('packer').startup(function(use)
   --Lspconfig
 
   use { -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    requires = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig',
+      requires = {
+          -- Automatically install LSPs to stdpath for neovim
+          'williamboman/mason.nvim',
+          'williamboman/mason-lspconfig.nvim',
 
-      -- Useful status updates for LSP
-      'j-hui/fidget.nvim',
+          -- Useful status updates for LSP
+          'j-hui/fidget.nvim',
 
-      -- Additional lua configuration, makes nvim stuff amazing
-      'folke/neodev.nvim',
-    },
+          -- Additional lua configuration, makes nvim stuff amazing
+          'folke/neodev.nvim',
+      },
   }
-
-  use { 'mattn/efm-langserver', run = 'make' }
 
   -- auto-completion
   use 'onsails/lspkind-nvim' --VSCode-like Pictograms
 
   use { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-buffer'
-    },
+      'hrsh7th/nvim-cmp',
+      requires = {
+          'hrsh7th/cmp-nvim-lsp',
+          'L3MON4D3/LuaSnip',
+          'saadparwaiz1/cmp_luasnip',
+          'hrsh7th/cmp-buffer'
+      },
   }
 
   --LSP UI
@@ -59,25 +57,25 @@ require('packer').startup(function(use)
 
   -- Fuzz finder
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      -- or                            , branch = '0.1.x',
+      requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'kyazdani42/nvim-web-devicons'
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make',
-    cond = vim.fn.executable 'make' == 1
+      'nvim-telescope/telescope-fzf-native.nvim',
+      run = 'make',
+      cond = vim.fn.executable 'make' == 1
   }
 
   -- Tabs: Bufferline
   -- using packer.nvim
   use {
-    'akinsho/bufferline.nvim',
-    tag = "v3.*",
-    requires = 'nvim-tree/nvim-web-devicons'
+      'akinsho/bufferline.nvim',
+      tag = "v3.*",
+      requires = 'nvim-tree/nvim-web-devicons'
   }
 
   --Formatter: prettier and null-ls
@@ -115,7 +113,6 @@ require('packer').startup(function(use)
   if is_bootstrap then
     require('packer').sync()
   end
-
 end)
 
 
@@ -135,9 +132,9 @@ end
 -- Automatically source and re-compile packer whenever you save this init.lua
 local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
-  command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
-  group = packer_group,
-  pattern = vim.fn.expand '$MYVIMRC',
+    command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
+    group = packer_group,
+    pattern = vim.fn.expand '$MYVIMRC',
 })
 
 -- set color of side lines to white

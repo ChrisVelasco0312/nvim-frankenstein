@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/cristian/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  ["efm-langserver"] = {
-    loaded = true,
-    path = "/home/cristian/.local/share/nvim/site/pack/packer/start/efm-langserver",
-    url = "https://github.com/mattn/efm-langserver"
-  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/home/cristian/.local/share/nvim/site/pack/packer/start/fidget.nvim",

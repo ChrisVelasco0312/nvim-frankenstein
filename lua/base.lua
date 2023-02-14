@@ -94,12 +94,3 @@ vim.cmd [[
     autocmd InsertEnter,WinLeave * set norelativenumber
   augroup END
 ]]
-
-
--- auto source this file when nvim opens
-vim.cmd [[
-  augroup auto_source
-    autocmd!
-    autocmd BufWritePost ~/.config/nvim/ source %
-  augroup END
-]]
