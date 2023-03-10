@@ -15,5 +15,15 @@ lspconfig.emmet_ls.setup({
         ["bem.enabled"] = true,
       },
     },
+    jsx = {
+      options = {
+        ["jsx.enabled"] = true,
+        ["markup.attributes"] = {
+          ["class"] = "className",
+          ["for"] = "htmlFor",
+          ["tabindex"] = "tabIndex",
+        },
+      }
+    },
   }
 })
