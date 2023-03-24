@@ -10,9 +10,11 @@ Based on the following projects:
 
 ### INSTALL
 
-1.  Install dependencies: -[NVM](https://github.com/nvm-sh/nvm)
-    -Fish terminal
-    -tree-sitter CLI
+1.  Install dependencies:
+
+    - [NVM](https://github.com/nvm-sh/nvm)
+    - Fish terminal
+    - tree-sitter CLI
 
 2.  Clone and run fkstn-nvim:
     - `git clone https://github.com/ChrisVelasco0312/nvim-frankenstein ~/.config/nvim --depth 1 && nvim`
