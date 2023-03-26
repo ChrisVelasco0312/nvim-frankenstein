@@ -71,7 +71,25 @@ local servers = {
   tsserver = {
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
-  }
+  },
+  lua_ls = {
+    Lua = {
+      workspace = {
+        checkThirdParty = false,
+      },
+      telemetry = {
+        enable = false,
+      },
+    }
+  },
+  tailwindcss = {
+    filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    cmd = { "tailwindcss-language-server", "--stdio" }
+  },
+  eslint = {
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    cmd = { "eslint-language-server", "--stdio" }
+  },
 }
 
 -- Setup neovim lua configuration
