@@ -10,7 +10,7 @@
   "fidget.nvim": { "branch": "main", "commit": "688b4fec4517650e29c3e63cfbb6e498b3112ba1" },
   "git.nvim": { "branch": "main", "commit": "32d0d6575d4e06d44758baebf5ea5cd03121ae12" },
   "gitsigns.nvim": { "branch": "main", "commit": "ca473e28382f1524aa3d2b6f04bcf54f2e6a64cb" },
-  "lazy.nvim": { "branch": "main", "commit": "be77c59bf742379b6c5ad1e70d29c5fc1ee55944" },
+  "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
   "lspkind-nvim": { "branch": "master", "commit": "c68b3a003483cf382428a43035079f78474cd11e" },
   "lspsaga.nvim": { "branch": "main", "commit": "04617d1f5b1cfbdd2a99d9765ef04fc6ae415622" },
   "lualine.nvim": { "branch": "master", "commit": "e99d733e0213ceb8f548ae6551b04ae32e590c80" },
