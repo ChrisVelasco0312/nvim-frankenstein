@@ -89,7 +89,7 @@ local servers = {
   eslint = {
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
     cmd = { "eslint-language-server", "--stdio" }
-  },
+  }
 }
 
 -- Setup neovim lua configuration

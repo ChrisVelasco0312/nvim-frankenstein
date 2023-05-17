@@ -1,4 +1,3 @@
-
 require('lazy').setup({
 
   -- THEME
@@ -9,7 +8,8 @@ require('lazy').setup({
 
   --Lspconfig
 
-  { -- LSP Configuration & Plugins
+  {
+    -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
@@ -27,7 +27,8 @@ require('lazy').setup({
   -- auto-completion
   'onsails/lspkind-nvim', --VSCode-like Pictograms
 
-  { -- Autocompletion
+  {
+    -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
@@ -48,7 +49,8 @@ require('lazy').setup({
 
   -- Fuzz finder
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
     -- or                            , branch = '0.1.x',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
@@ -94,6 +96,9 @@ require('lazy').setup({
   -- conjure
   'Olical/conjure',
   'wlangstroth/vim-racket',
+
+  -- highlight logs
+  'MTDL9/vim-log-highlighting',
 })
 
 require('Comment').setup()
