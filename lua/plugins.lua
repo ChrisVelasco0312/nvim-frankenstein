@@ -7,6 +7,7 @@ require('lazy').setup({
   'nvim-lualine/lualine.nvim',
 
   --Lspconfig
+  'ckipp01/nvim-jenkinsfile-linter',
 
   {
     -- LSP Configuration & Plugins
@@ -66,7 +67,6 @@ require('lazy').setup({
   -- using packer.nvim
   {
     'akinsho/bufferline.nvim',
-    tag = "v3.*",
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
 

@@ -1,4 +1,4 @@
-vim.cmd("autocmd!")
+-- vim.cmd("autocmd!")
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -24,14 +24,14 @@ vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = false         -- No Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
 -- Undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
+-- vim.cmd([[let &t_Cs = "\e[4:3m"]])
+-- vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Turn off paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
@@ -70,7 +70,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
+-- vim.cmd [[colorscheme onedark]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -87,10 +87,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- set relative numbers only in normal and visual mode
-vim.cmd [[
-  augroup relative_numbers
-    autocmd!
-    autocmd InsertLeave,WinEnter * set relativenumber
-    autocmd InsertEnter,WinLeave * set norelativenumber
-  augroup END
-]]
+-- vim.cmd [[
+--   augroup relative_numbers
+--     autocmd!
+--     autocmd InsertLeave,WinEnter * set relativenumber
+--     autocmd InsertEnter,WinLeave * set norelativenumber
+--   augroup END
+-- ]]
