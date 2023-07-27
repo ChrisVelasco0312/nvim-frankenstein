@@ -1,5 +1,4 @@
 require('lazy').setup({
-
   -- THEME
   'navarasu/onedark.nvim',
 
@@ -40,7 +39,10 @@ require('lazy').setup({
   },
 
   --LSP UI
-  'glepnir/lspsaga.nvim',
+  'nvimdev/lspsaga.nvim',
+  config = function()
+    require('lspsaga').setup({})
+  end,
   -- highlight
   'nvim-treesitter/nvim-treesitter',
 
@@ -99,6 +101,12 @@ require('lazy').setup({
 
   -- highlight logs
   'MTDL9/vim-log-highlighting',
+
+  --folding
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = 'kevinhwang91/promise-async'
+  }
 })
 
 require('Comment').setup()
