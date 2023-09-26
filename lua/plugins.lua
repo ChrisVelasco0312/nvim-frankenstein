@@ -21,6 +21,10 @@ require('lazy').setup({
 
       -- Additional lua configuration, makes nvim stuff amazing
       'folke/neodev.nvim',
+
+      -- trouble
+      'folke/trouble.nvim',
+      'nvim-lua/lsp_extensions.nvim',
     },
   },
 
