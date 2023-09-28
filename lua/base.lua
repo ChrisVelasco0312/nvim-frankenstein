@@ -94,3 +94,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --     autocmd InsertEnter,WinLeave * set norelativenumber
 --   augroup END
 -- ]]
+
+vim.cmd [[
+  augroup filetypedetect
+    autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
+  augroup END
+]]
+
+
+vim.cmd [[
+  augroup filetypedetect
+    autocmd BufRead,BufNewFile prod_Jenkinsfile set filetype=groovy
+  augroup END
+]]
