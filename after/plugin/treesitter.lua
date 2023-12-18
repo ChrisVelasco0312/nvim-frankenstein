@@ -2,6 +2,12 @@ local status, ts = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
 ts.setup {
+  modules = {
+  },
+  ignore_install = {
+  },
+  sync_install = true,
+  auto_install = true,
   highlight = {
     enable = true,
     disable = {},
@@ -20,7 +26,8 @@ ts.setup {
     "swift",
     "css",
     "html",
-    "lua"
+    "lua",
+    "javascript"
   },
   autotag = {
     enable = true,
@@ -46,6 +53,8 @@ ts.setup {
         ['if'] = '@function.inner',
         ['ac'] = '@class.outer',
         ['ic'] = '@class.inner',
+        ["as"] = "@statement.outer",
+        ["is"] = "@statement.inner",
       },
     },
     move = {

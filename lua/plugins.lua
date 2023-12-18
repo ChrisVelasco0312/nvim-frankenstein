@@ -94,7 +94,13 @@ require('lazy').setup({
   'mhinz/vim-startify',
 
   --COPILOT
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
+
+  -- Codium
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
+  },
 
   --avoid neck pain
   { 'shortcuts/no-neck-pain.nvim' },
