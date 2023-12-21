@@ -28,6 +28,14 @@ lspconfig.emmet_ls.setup({
   }
 })
 
+-- lspconfig.tsserver.setup({
+--   init_options = {
+--     preferences = {
+--       disableSuggestions = true,
+--     },
+--   },
+-- })
+
 vim.diagnostic.config({
   virtual_text = {
     prefix = '●'

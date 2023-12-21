@@ -70,7 +70,12 @@ local servers = {
   -- rust_analyzer = {},
   tsserver = {
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-    cmd = { "typescript-language-server", "--stdio" }
+    cmd = { "typescript-language-server", "--stdio" },
+    init_options = {
+      preferences = {
+        disableSuggestions = true,
+      },
+    },
   },
   lua_ls = {
     Lua = {
