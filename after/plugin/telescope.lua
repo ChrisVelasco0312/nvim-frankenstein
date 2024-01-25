@@ -2,6 +2,7 @@ local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
+-- local themes = require("telescope.themes")
 
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
@@ -42,30 +43,6 @@ telescope.setup {
 }
 
 
--- takuya maps
--- vim.keymap.set('n', ';f',
---   function()
---     builtin.find_files({
---       no_ignore = false,
---       hidden = true
---     })
---   end)
--- vim.keymap.set('n', ';r', function()
---   builtin.live_grep()
--- end)
--- vim.keymap.set('n', '\\\\', function()
---   builtin.buffers()
--- end)
--- vim.keymap.set('n', ';t', function()
---   builtin.help_tags()
--- end)
--- vim.keymap.set('n', ';;', function()
---   builtin.resume()
--- end)
--- vim.keymap.set('n', ';e', function()
---   builtin.diagnostics()
--- end)
---
 telescope.load_extension("file_browser")
 vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
@@ -86,15 +63,18 @@ pcall(require('telescope').load_extension, 'fzf')
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
--- vim.keymap.set('n', '<leader>/', function()
---   -- You can pass additional configuration to telescope to change theme, layout, etc.
---   builtin.current_buffer_fuzzy_find(themes.get_dropdown {
---     winblend = 10,
---     previewer = false,
---   })
---
--- end, { desc = '[/] Fuzzily search in current buffer]' })
---
+vim.keymap.set('n', ';/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+vim.keymap.set('n', '<leader>/', function()
+  require 'telescope.builtin'.live_grep { search_dirs = { "%:p" } }
+end, { noremap = true, silent = true, desc = '[/] Fuzzily search in current buffer' })
+
 
 vim.keymap.set('n', '<leader>sf',
   function()
