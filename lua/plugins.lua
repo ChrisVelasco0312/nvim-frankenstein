@@ -60,7 +60,7 @@ require('lazy').setup({
   -- Fuzz finder
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
+    tag = '0.1.4',
     -- or                            , branch = '0.1.x',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
@@ -68,10 +68,9 @@ require('lazy').setup({
   -- Fuzzy Finder Algorithm which dependencies local dependencies to be built. Only load if `make` is available
   {
     'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make',
-    cond = vim.fn.executable 'make' == 1
+    build =
+    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   },
-
   -- Tabs: Bufferline
   -- using packer.nvim
   {
@@ -100,10 +99,10 @@ require('lazy').setup({
   -- 'github/copilot.vim',
 
   -- Codium
-  {
-    'Exafunction/codeium.vim',
-    event = 'BufEnter'
-  },
+  -- {
+  --   'Exafunction/codeium.vim',
+  --   event = 'BufEnter'
+  -- },
 
   --avoid neck pain
   { 'shortcuts/no-neck-pain.nvim' },
