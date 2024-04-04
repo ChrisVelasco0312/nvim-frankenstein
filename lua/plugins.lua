@@ -30,7 +30,6 @@ require('lazy').setup({
       'nvim-lua/lsp_extensions.nvim',
     },
   },
-
   -- auto-completion
   'onsails/lspkind-nvim', --VSCode-like Pictograms
 
@@ -99,10 +98,10 @@ require('lazy').setup({
   -- 'github/copilot.vim',
 
   -- Codium
-  -- {
-  --   'Exafunction/codeium.vim',
-  --   event = 'BufEnter'
-  -- },
+  {
+    'ChrisVelasco0312/codeium.vim',
+    event = 'BufEnter'
+  },
 
   --avoid neck pain
   { 'shortcuts/no-neck-pain.nvim' },

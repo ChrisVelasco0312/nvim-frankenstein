@@ -5,9 +5,10 @@ ts.setup {
   modules = {
   },
   ignore_install = {
+    "swift"
   },
   sync_install = true,
-  auto_install = true,
+  auto_install = false,
   highlight = {
     enable = true,
     disable = {},
