@@ -9,7 +9,11 @@ if (not status) then return end
 
 local sources = {
   builtins.diagnostics.eslint.with({
-    diagnostics_format = '[eslint] #{m}\n(#{c})'
+    diagnostics_format = '[eslint] #{m}\n(#{c})',
+    command = "eslint",
+    condition = function(utils)
+      return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
+    end,
   }),
   builtins.diagnostics.fish,
   builtins.formatting.prettierd.with({
@@ -32,15 +36,6 @@ local on_attach = function(client, bufnr)
     end, { buffer = bufnr, desc = "[lsp] format" })
   end
 end
-
-null_ls.builtins.diagnostics.eslint.with({
-  diagnostics_format = "[eslint] #{m}\n(#{c})",
-  -- only enable eslint if root has .eslintrc.js
-  condition = function(utils)
-    return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
-  end,
-})
-
 
 
 null_ls.setup({
