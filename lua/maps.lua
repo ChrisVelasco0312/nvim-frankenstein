@@ -15,8 +15,6 @@ vim.keymap.set('n', '<Space>x', ':wq!<Enter>', { silent = true })
 --source
 vim.keymap.set('n', '<Space>so', ':so<Enter>', { silent = true })
 
--- Toggle neckpain
-vim.keymap.set('n', '<Space>np', ':NoNeckPain<Enter>', { silent = true })
 
 --Primeagen's keymaps
 

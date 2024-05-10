@@ -8,3 +8,8 @@ neckPain.setup({
     enableOnTabEnter = true,
   }
 })
+
+-- Toggle neckpain
+vim.keymap.set('n', '<Space>np', ':NoNeckPain<Enter>', { silent = true })
+vim.keymap.set('n', '<Space>nu', ':NoNeckPainWidthUp<Enter>', { silent = true })
+vim.keymap.set('n', '<Space>nn', ':NoNeckPainWidthDown<Enter>', { silent = true })
