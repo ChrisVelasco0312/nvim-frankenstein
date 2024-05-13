@@ -125,7 +125,15 @@ require('lazy').setup({
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  --harpoon
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   }
+
 })
 
 require('Comment').setup()
