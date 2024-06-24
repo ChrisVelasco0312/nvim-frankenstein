@@ -76,6 +76,7 @@ require('lazy').setup({
   -- using packer.nvim
   {
     'akinsho/bufferline.nvim',
+    branch = 'main',
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
 
