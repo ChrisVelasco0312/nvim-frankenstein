@@ -35,6 +35,12 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 --   },
 -- })
 
+lspconfig["astro"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "astro" },
+})
+
 vim.diagnostic.config({
   virtual_text = {
     prefix = '●'

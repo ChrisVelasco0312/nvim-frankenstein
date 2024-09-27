@@ -94,6 +94,9 @@ local servers = {
   eslint = {
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
     cmd = { "eslint-language-server", "--stdio" }
+  },
+  astro = {
+    filetypes = { "astro" },
   }
 }
 
