@@ -69,6 +69,7 @@ vim.keymap.set('n', '<leader>sf',
     builtin.find_files({
       no_ignore = false,
       hidden = true,
+      path_display = { "truncate" },
     })
   end, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
