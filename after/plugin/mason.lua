@@ -32,6 +32,11 @@ local on_attach = function(_, bufnr)
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  vim.keymap.set('n', 'gdt', function()
+    vim.cmd("tab split")     -- Opens a new tab for the definition
+    vim.lsp.buf.definition() -- Jumps to the definition in the new tab
+  end, { noremap = true, silent = true, desc = '[G]oto [D]efinition in new tab' })
+
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
