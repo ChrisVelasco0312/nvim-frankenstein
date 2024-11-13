@@ -85,6 +85,22 @@ require('lazy').setup({
   'MunifTanjim/prettier.nvim',
 
   --git
+  {
+    'kdheepak/lazygit.nvim',
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      { "<leader>Lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    }
+  },
   'lewis6991/gitsigns.nvim',
   'dinhhuy258/git.nvim',
   -- Git related plugins
