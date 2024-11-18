@@ -22,6 +22,7 @@ telescope.setup {
   extensions = {
     file_browser = {
       theme = "dropdown",
+      hidden = true,
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
       mappings = {
@@ -63,15 +64,11 @@ vim.keymap.set('n', '<leader>/', function()
   builtin.live_grep { search_dirs = { "%:p" } }
 end, { noremap = true, silent = true, desc = '[/] Fuzzily search in current buffer' })
 
-
 vim.keymap.set('n', '<leader>sf',
-  function()
-    builtin.find_files({
-      no_ignore = false,
-      hidden = true,
-      path_display = { "truncate" },
-    })
-  end, { desc = '[S]earch [F]iles' })
+  "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+  {
+    desc = '[S]earch [F]iles',
+  })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })

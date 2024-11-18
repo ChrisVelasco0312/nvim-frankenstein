@@ -28,6 +28,7 @@ ts.setup {
     "html",
     "lua",
     "javascript",
+    "jsdoc",
     "astro",
     "markdown_inline"
   },

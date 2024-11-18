@@ -20,7 +20,6 @@ vim.diagnostic.config({
 })
 
 
-
 local function filter_tsserver_diagnostics(_, result, ctx, config)
   if result.diagnostics == nil then
     return

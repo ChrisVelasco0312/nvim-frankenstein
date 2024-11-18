@@ -62,11 +62,3 @@ vim.keymap.set('n', '<leader>o', '<Cmd>Lspsaga outline<CR>', {
 
 -- code action
 vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-
--- Run 'Lspsaga winbar_toggle' when opening any new buffer
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  callback = function()
-    vim.cmd('Lspsaga winbar_toggle')
-  end,
-  desc = 'Automatically toggle Lspsaga winbar on buffer open',
-})
