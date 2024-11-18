@@ -7,6 +7,11 @@ require('lazy').setup({
 
   --Lspconfig
   'ckipp01/nvim-jenkinsfile-linter',
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
 
   {
     -- LSP Configuration & Plugins
