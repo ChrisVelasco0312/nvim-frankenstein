@@ -3,38 +3,6 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- lspconfig.emmet_ls.setup({
---   -- on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx' },
---   init_options = {
---     html = {
---       options = {
---         -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
---         ["bem.enabled"] = true,
---       },
---     },
---     jsx = {
---       options = {
---         ["jsx.enabled"] = true,
---         ["markup.attributes"] = {
---           ["class"] = "className",
---           ["for"] = "htmlFor",
---           ["tabindex"] = "tabIndex",
---         },
---       }
---     },
---   }
--- })
-
--- lspconfig.tsserver.setup({
---   init_options = {
---     preferences = {
---       disableSuggestions = true,
---     },
---   },
--- })
-
 lspconfig["astro"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -117,3 +85,6 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
   command = "lua OpenDiagnosticIfNoFloat()",
   group = "lsp_diagnostics_hold",
 })
+
+--keymap for lsprestart
+vim.keymap.set("n", "<leader>l", ":LspRestart<cr>", { silent = true, desc = '[l]sp restart' })
