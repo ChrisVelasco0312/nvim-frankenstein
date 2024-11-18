@@ -28,22 +28,15 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
-  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   vim.keymap.set('n', 'gdt', function()
     vim.cmd("tab split")     -- Opens a new tab for the definition
     vim.lsp.buf.definition() -- Jumps to the definition in the new tab
   end, { noremap = true, silent = true, desc = '[G]oto [D]efinition in new tab' })
 
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-  -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
@@ -73,15 +66,15 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  tsserver = {
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-    cmd = { "typescript-language-server", "--stdio" },
-    init_options = {
-      preferences = {
-        disableSuggestions = true,
-      },
-    },
-  },
+  -- tsserver = {
+  --   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  --   cmd = { "typescript-language-server", "--stdio" },
+  --   init_options = {
+  --     preferences = {
+  --       disableSuggestions = true,
+  --     },
+  --   },
+  -- },
   lua_ls = {
     Lua = {
       workspace = {
