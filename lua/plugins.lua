@@ -5,6 +5,8 @@ require('lazy').setup({
   -- STATUS LINE
   'nvim-lualine/lualine.nvim',
 
+  "gennaro-tedesco/nvim-peekup",
+
   --Lspconfig
   'ckipp01/nvim-jenkinsfile-linter',
   {
