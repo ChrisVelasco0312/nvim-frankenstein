@@ -13,15 +13,19 @@ Based on the following projects:
 1.  Install dependencies:
 
     - [NVM](https://github.com/nvm-sh/nvm)
-    - Fish terminal
-    - tree-sitter CLI
+    - [Node](https://nodejs.org/en/)
+    - Fish terminal: for displaying git blame
+    - tree-sitter CLI: for syntax highlighting
+    - typescript
+    - ripgrep: for searching
 
 2.  Clone and run fkstn-nvim:
     - `git clone https://github.com/ChrisVelasco0312/nvim-frankenstein ~/.config/nvim --depth 1 && nvim`
+    - `git clone git@github.com:ChrisVelasco0312/nvim-frankenstein.git --depth 1 && nvim`
 
 ### ABOUT PACKER TO LAZY MIGRATION
 
-It is important to delete the linked packer files in order to get lazy ready to work
+It is important to delete the linked packer files in order to get `lazy` ready to work
 
 - Remove the .local related files
 
