@@ -18,29 +18,21 @@ telescope.setup {
       },
     },
     file_ignore_patterns = { "node_modules", ".git/" },
-  },
-  extensions = {
-    file_browser = {
-      theme = "dropdown",
-      hidden = true,
-      -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
-      mappings = {
-        -- your custom insert mode mappings
-        ["i"] = {
-          ["<C-w>"] = function() vim.cmd('normal vbd') end,
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-          ["N"] = fb_actions.create,
-          ["h"] = fb_actions.goto_parent_dir,
-          ["/"] = function()
-            vim.cmd('startinsert')
-          end
-        },
-      },
+    path_display = {
+      truncate = true
     },
+
   },
+  pickers = {
+    find_files = {
+      hidden = true,
+      no_ignore = true
+    },
+    live_grep = {
+      hidden = true,
+      no_ignore = true
+    }
+  }
 }
 
 
@@ -64,11 +56,12 @@ vim.keymap.set('n', '<leader>/', function()
   builtin.live_grep { search_dirs = { "%:p" } }
 end, { noremap = true, silent = true, desc = '[/] Fuzzily search in current buffer' })
 
-vim.keymap.set('n', '<leader>sf',
-  "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
-  {
-    desc = '[S]earch [F]iles',
-  })
+-- vim.keymap.set('n', '<leader>sf',
+--   "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+--   {
+--     desc = '[S]earch [F]iles',
+--   })
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
