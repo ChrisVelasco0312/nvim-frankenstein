@@ -62,19 +62,11 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {
-  --   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  --   cmd = { "typescript-language-server", "--stdio" },
-  --   init_options = {
-  --     preferences = {
-  --       disableSuggestions = true,
-  --     },
-  --   },
-  -- },
+  cssls = {},
+  cssmodules_ls = {
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    cmd = { "cssmodules-language-server", "--stdio" }
+  },
   lua_ls = {
     Lua = {
       workspace = {
