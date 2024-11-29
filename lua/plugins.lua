@@ -116,6 +116,12 @@ require('lazy').setup({
   --Comments
   'numToStr/Comment.nvim',
   'tpope/vim',
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+    }
+  },
 
   --Dashboard
   'mhinz/vim-startify',

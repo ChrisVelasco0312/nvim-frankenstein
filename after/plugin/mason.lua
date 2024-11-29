@@ -63,10 +63,6 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   cssls = {},
-  cssmodules_ls = {
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    cmd = { "cssmodules-language-server", "--stdio" }
-  },
   lua_ls = {
     Lua = {
       workspace = {
