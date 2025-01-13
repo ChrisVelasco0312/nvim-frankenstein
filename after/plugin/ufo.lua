@@ -4,9 +4,18 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
--- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+local ufo = require('ufo');
+-- Set fold options
+vim.o.foldmethod = 'indent' -- Use indentation for folding
+vim.o.foldlevel = 99        -- Open folds by default
+vim.o.foldenable = true     -- Enable folding
+
+-- Define keybindings for folding
+vim.api.nvim_set_keymap('n', 'za', 'za', { noremap = true, silent = true }) -- Toggle fold under the cursor
+vim.api.nvim_set_keymap('n', 'zc', 'zc', { noremap = true, silent = true }) -- Close fold under the cursor
+vim.api.nvim_set_keymap('n', 'zo', 'zo', { noremap = true, silent = true }) -- Open fold under the cursor
+vim.keymap.set('n', 'zR', ufo.openAllFolds)
+vim.keymap.set('n', 'zM', ufo.closeAllFolds)
 
 
 local handler = function(virtText, lnum, endLnum, width, truncate)
@@ -61,3 +70,12 @@ end
 
 
 vim.o.statuscolumn = "%!v:lua.get_statuscol()"
+
+vim.g["conjure#mapping#doc_word"] = { "L" }
+
+vim.keymap.set('n', 'K', function()
+  local winid = require('ufo').peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
+end)

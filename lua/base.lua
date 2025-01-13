@@ -102,10 +102,3 @@ vim.cmd [[
     autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
   augroup END
 ]]
-
-
-vim.cmd [[
-  augroup filetypedetect
-    autocmd BufRead,BufNewFile prod_Jenkinsfile set filetype=groovy
-  augroup END
-]]
