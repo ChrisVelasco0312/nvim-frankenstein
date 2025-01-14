@@ -191,22 +191,6 @@ require('lazy').setup({
     dependencies = {
       -- Required.
       "nvim-lua/plenary.nvim",
-
-      -- see below for full list of optional dependencies 👇
-    },
-    opts = {
-      workspaces = {
-        {
-          name = "personal",
-          path = "~/cristian-linux/vaults/personal",
-        },
-        {
-          name = "work",
-          path = "~/cristian-linux/vaults/work",
-        },
-      },
-
-      -- see below for full list of options 👇
     },
   }
 })

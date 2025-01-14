@@ -83,7 +83,7 @@ local servers = {
   },
   astro = {
     filetypes = { "astro" },
-  }
+  },
 }
 
 -- Setup neovim lua configuration
@@ -112,6 +112,7 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
 
 -- Turn on lsp status information
 require('fidget').setup()

@@ -1,14 +1,13 @@
+vim.o.mouse = 'a'
 vim.o.foldcolumn = '1' -- '0' is not bad
 vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.o.foldmethod = 'indent' -- Use indentation for folding
 
 local ufo = require('ufo');
 -- Set fold options
-vim.o.foldmethod = 'indent' -- Use indentation for folding
-vim.o.foldlevel = 99        -- Open folds by default
-vim.o.foldenable = true     -- Enable folding
 
 -- Define keybindings for folding
 vim.api.nvim_set_keymap('n', 'za', 'za', { noremap = true, silent = true }) -- Toggle fold under the cursor
