@@ -1,3 +1,4 @@
+vim.cmd('Copilot disable')
 -- disable codeium by default
 vim.keymap.set('n', ';cc', ':Copilot enable<ENTER>', { silent = true, desc = 'Copilot Enable' })
 -- enable copilot

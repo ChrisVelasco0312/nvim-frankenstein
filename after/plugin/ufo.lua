@@ -10,11 +10,11 @@ local ufo = require('ufo');
 -- Set fold options
 
 -- Define keybindings for folding
-vim.api.nvim_set_keymap('n', 'za', 'za', { noremap = true, silent = true }) -- Toggle fold under the cursor
-vim.api.nvim_set_keymap('n', 'zc', 'zc', { noremap = true, silent = true }) -- Close fold under the cursor
-vim.api.nvim_set_keymap('n', 'zo', 'zo', { noremap = true, silent = true }) -- Open fold under the cursor
-vim.keymap.set('n', 'zR', ufo.openAllFolds)
-vim.keymap.set('n', 'zM', ufo.closeAllFolds)
+vim.api.nvim_set_keymap('n', 'za', 'za', { noremap = true, silent = true, desc = "Toggle fold under the cursor" })
+vim.api.nvim_set_keymap('n', 'zc', 'zc', { noremap = true, silent = true, desc = "Close fold under the cursor" })
+vim.api.nvim_set_keymap('n', 'zo', 'zo', { noremap = true, silent = true, desc = "Open fold under the cursor" })
+vim.keymap.set('n', 'zR', ufo.openAllFolds, { noremap = true, silent = true, desc = "Open all folds" })
+vim.keymap.set('n', 'zM', ufo.closeAllFolds, { noremap = true, silent = true, desc = "Close all folds" })
 
 
 local handler = function(virtText, lnum, endLnum, width, truncate)

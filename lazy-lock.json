@@ -21,6 +21,7 @@
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "56e435e09f8729af2d41973e81a0db440f8fe9c9" },
   "mason.nvim": { "branch": "main", "commit": "a09da6ac634926a299dd439da08bdb547a8ca011" },
+  "mini.nvim": { "branch": "main", "commit": "0420076298c4457f200c2de468f65d080597a347" },
   "neodev.nvim": { "branch": "main", "commit": "7cb4f7f29c6bf6f1d21a37f6dd6d12ba64266b09" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "b305821ca45897db6276e9ae5893747bb24040c7" },
   "null-ls.nvim": { "branch": "main", "commit": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7" },

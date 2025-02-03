@@ -10,5 +10,9 @@ obsidian.setup({
       name = "knowledge-vault",
       path = "~/cristian-linux/vaults/knowledge-vault",
     },
+    {
+      name = "compsci-uni",
+      path = "~/cristian-linux/vaults/compsci-uni",
+    },
   }
 })
