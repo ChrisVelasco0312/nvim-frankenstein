@@ -101,12 +101,3 @@ vim.cmd [[
     autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
   augroup END
 ]]
-
-vim.opt.textwidth = 80
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    vim.opt_local.wrap = true
-  end,
-})
