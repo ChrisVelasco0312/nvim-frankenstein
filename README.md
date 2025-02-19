@@ -1,5 +1,7 @@
 # FRANKENSTEIN NEOVIM CONFIGURATION
 
+working in v0.9.5
+
 This is my experimental neovim configuration.
 A work in progress. May contain bugs
 
