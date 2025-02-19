@@ -79,14 +79,6 @@ require('lazy').setup({
     cond = vim.fn.executable 'make' == 1
   },
 
-  -- Tabs: Bufferline
-  -- using packer.nvim
-  {
-    'akinsho/bufferline.nvim',
-    branch = 'main',
-    dependencies = 'nvim-tree/nvim-web-devicons'
-  },
-
   --Formatter: prettier and null-ls
   'jose-elias-alvarez/null-ls.nvim',
   'MunifTanjim/prettier.nvim',
@@ -123,17 +115,8 @@ require('lazy').setup({
     }
   },
 
-  --Dashboard
-  'mhinz/vim-startify',
-
   --COPILOT
   'github/copilot.vim',
-
-  -- Codium
-  -- {
-  --   'Exafunction/codeium.vim',
-  --   event = 'BufEnter'
-  -- },
 
   --avoid neck pain
   { 'shortcuts/no-neck-pain.nvim' },
@@ -155,7 +138,6 @@ require('lazy').setup({
   {
     'stevearc/oil.nvim',
     opts = {},
-    -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
@@ -177,17 +159,9 @@ require('lazy').setup({
   'rafamadriz/friendly-snippets',
   {
     "epwalsh/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
+    version = "*",
     lazy = true,
     ft = "markdown",
-    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-    -- event = {
-    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-    --   -- refer to `:h file-pattern` for more examples
-    --   "BufReadPre path/to/my-vault/*.md",
-    --   "BufNewFile path/to/my-vault/*.md",
-    -- },
     dependencies = {
       -- Required.
       "nvim-lua/plenary.nvim",
