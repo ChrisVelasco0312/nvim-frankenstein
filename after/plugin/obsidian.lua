@@ -85,3 +85,27 @@ vim.api.nvim_create_user_command("RearrangeLines", rearrange_lines, {
   nargs = "?",  -- Accepts an optional argument (character limit)
   desc = "Rearrange selected lines to fit within a character limit, ensuring no single word is left alone.",
 })
+
+local function lazy_load_markdown()
+  local buf = vim.api.nvim_get_current_buf()
+  local win = vim.api.nvim_get_current_win()
+
+  -- Get the range of visible lines
+  local first_line = vim.fn.line('w0')
+  local last_line = vim.fn.line('w$')
+
+  -- Read the visible lines from the file
+  local lines = vim.api.nvim_buf_get_lines(buf, first_line - 1, last_line, false)
+
+  -- Clear the buffer and set the visible lines
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+end
+
+-- Set up an autocommand to update on scroll
+vim.api.nvim_create_autocmd('WinScrolled', {
+  pattern = '*.md',
+  callback = lazy_load_markdown,
+})
+
+-- Initial load
+lazy_load_markdown()

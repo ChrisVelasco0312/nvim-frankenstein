@@ -83,12 +83,6 @@ local servers = {
   },
   astro = {
     filetypes = { "astro" },
-  },
-  tsserver = {
-    filetypes = { "javascript", "javascriptreact" },
-    settings = {
-      documentFormatting = false,
-    },
   }
 }
 
