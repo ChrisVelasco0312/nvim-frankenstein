@@ -2,11 +2,16 @@ local ts = require('typescript-tools')
 
 ts.setup {
   disable_commands = false,
+  settings = {
+    -- Use the full path to tsserver from Volta
+    tsserver_path = vim.fn.trim(vim.fn.system('volta which tsserver')),
+    -- Enable JavaScript support
+    tsserver_file_preferences = {
+      includeJsGrammar = true,
+      allowJs = true,
+    },
+  },
 }
-
--- vim.keymap.set('n', '<leader>oi', ':TSToolsOrganizeImports<CR>', {
---   noremap = true, silent = true, desc = '[O]rganize [I]mports'
--- })
 
 -- Function to create a floating window with numbered TSTools commands
 local function show_tstools_menu()
