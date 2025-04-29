@@ -77,6 +77,29 @@ function OpenDiagnosticIfNoFloat()
   })
 end
 
+lspconfig.emmet_ls.setup({
+  -- on_attach = on_attach, capabilities = capabilities,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'jsx' },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+    jsx = {
+      options = {
+        ["jsx.enabled"] = true,
+        ["markup.attributes"] = {
+          ["class"] = "className",
+          ["for"] = "htmlFor",
+          ["tabindex"] = "tabIndex",
+        },
+      }
+    },
+  }
+})
+
 -- Show diagnostics under the cursor when holding position
 vim.api.nvim_create_augroup("lsp_diagnostics_hold", { clear = true })
 vim.api.nvim_create_autocmd({ "CursorHold" }, {

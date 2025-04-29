@@ -78,6 +78,18 @@ local servers = {
   astro = {
     filetypes = { "astro" },
   },
+  emmet_ls = {
+    filetypes = {
+      'html',
+      'typescriptreact',
+      'javascriptreact',
+      'css',
+      'sass',
+      'scss',
+      'less',
+      'jsx'
+    },
+  }
   -- tsserver = {
   --   filetypes = { "javascript", "javascriptreact" },
   --   settings = {
